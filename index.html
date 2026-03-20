@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Spectra Education is a Canadian nonprofit organization based in Ontario providing free K–12 tutoring to students in need.">
+<meta name="keywords" content="Spectra Education, nonprofit, tutoring, Ontario, Canada, free tutoring, K-12">
+<title>Spectra Education | Free Nonprofit K–12 Tutoring | Ontario, Canada</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fraunces:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --coral: #FF6B5B;
+    --yellow: #FFD166;
+    --teal: #06D6A0;
+    --blue: #118AB2;
+    --purple: #9B5DE5;
+    --navy: #0D1B2A;
+    --cream: #FFFBF2;
+    --gray: #6B7280;
+    --light: #F8F4EE;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--cream);
+    color: var(--navy);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 5%;
+    background: white;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+  }
+
+  .logo-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--coral), var(--purple), var(--blue));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 900;
+  }
+
+  .logo-text {
+    font-family: 'Fraunces', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--navy);
+  }
+
+  .logo-text span { color: var(--coral); }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    align-items: center;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--navy);
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--coral); }
+
+  .nav-cta {
+    background: var(--coral);
+    color: white !important;
+    padding: 0.6rem 1.4rem;
+    border-radius: 50px;
+    transition: transform 0.2s, box-shadow 0.2s !important;
+  }
+
+  .nav-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255,107,91,0.4);
+    color: white !important;
+  }
+
+  /* HERO */
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 3rem;
+    padding: 5rem 5% 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--yellow);
+    color: var(--navy);
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 800;
+    margin-bottom: 1.2rem;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .hero h1 {
+    font-family: 'Fraunces', serif;
+    font-size: 3.2rem;
+    line-height: 1.15;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+    animation: fadeUp 0.6s ease 0.1s both;
+  }
+
+  .hero h1 .highlight {
+    color: var(--coral);
+    font-style: italic;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+    color: var(--gray);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    max-width: 480px;
+    font-weight: 600;
+    animation: fadeUp 0.6s ease 0.2s both;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    animation: fadeUp 0.6s ease 0.3s both;
+  }
+
+  .btn-primary {
+    background: var(--coral);
+    color: white;
+    padding: 0.9rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(255,107,91,0.35);
+  }
+
+  .btn-secondary {
+    background: white;
+    color: var(--navy);
+    padding: 0.9rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1rem;
+    border: 2px solid var(--navy);
+    transition: transform 0.2s, background 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .btn-secondary:hover {
+    background: var(--navy);
+    color: white;
+    transform: translateY(-3px);
+  }
+
+  /* HERO VISUAL */
+  .hero-visual {
+    position: relative;
+    animation: fadeUp 0.8s ease 0.2s both;
+  }
+
+  .hero-card-main {
+    background: white;
+    border-radius: 24px;
+    padding: 2rem;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-card-main h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--navy);
+  }
+
+  .subject-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .pill {
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 700;
+  }
+
+  .pill-coral { background: #FFE8E6; color: var(--coral); }
+  .pill-teal { background: #E0FBF4; color: #059669; }
+  .pill-blue { background: #E0F2FE; color: var(--blue); }
+  .pill-purple { background: #F3E8FF; color: var(--purple); }
+  .pill-yellow { background: #FFF8E1; color: #B45309; }
+
+  .booking-preview {
+    background: var(--light);
+    border-radius: 14px;
+    padding: 1rem 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .booking-preview-left p:first-child {
+    font-size: 0.75rem;
+    color: var(--gray);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .booking-preview-left p:last-child {
+    font-weight: 800;
+    font-size: 1rem;
+    color: var(--navy);
+  }
+
+  .book-now-mini {
+    background: var(--teal);
+    color: white;
+    padding: 0.5rem 1.1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-decoration: none;
+    transition: transform 0.2s;
+  }
+
+  .book-now-mini:hover { transform: scale(1.05); }
+
+  .floating-badge {
+    position: absolute;
+    background: white;
+    border-radius: 16px;
+    padding: 0.8rem 1.1rem;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    font-weight: 800;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    z-index: 3;
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .badge-top {
+    top: -20px;
+    right: -20px;
+    color: var(--purple);
+    animation-delay: 0s;
+  }
+
+  .badge-bottom {
+    bottom: -20px;
+    left: -20px;
+    color: var(--teal);
+    animation-delay: 1.5s;
+  }
+
+  .badge-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: currentColor;
+  }
+
+  /* TRUST BAR */
+  .trust-bar {
+    background: var(--navy);
+    padding: 1.2rem 5%;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+
+  .trust-icon {
+    font-size: 1.2rem;
+  }
+
+  /* HOW IT WORKS */
+  .section {
+    padding: 5rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--coral);
+    margin-bottom: 0.5rem;
+  }
+
+  .section-title {
+    font-family: 'Fraunces', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 0.8rem;
+    line-height: 1.2;
+  }
+
+  .section-sub {
+    color: var(--gray);
+    font-size: 1rem;
+    font-weight: 600;
+    max-width: 520px;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+  }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .step-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 2px solid transparent;
+  }
+
+  .step-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+  }
+
+  .step-card:nth-child(1) { border-color: var(--coral); }
+  .step-card:nth-child(2) { border-color: var(--teal); }
+  .step-card:nth-child(3) { border-color: var(--blue); }
+
+  .step-number {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .step-card:nth-child(1) .step-number { background: #FFE8E6; color: var(--coral); }
+  .step-card:nth-child(2) .step-number { background: #E0FBF4; color: #059669; }
+  .step-card:nth-child(3) .step-number { background: #E0F2FE; color: var(--blue); }
+
+  .step-card h3 {
+    font-size: 1.15rem;
+    font-weight: 800;
+    margin-bottom: 0.6rem;
+    color: var(--navy);
+  }
+
+  .step-card p {
+    color: var(--gray);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    font-weight: 600;
+  }
+
+  /* SERVICES */
+  .services-section {
+    background: var(--light);
+    padding: 5rem 5%;
+  }
+
+  .services-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+
+  .service-card {
+    background: white;
+    border-radius: 20px;
+    padding: 1.8rem;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+  }
+
+  .service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+  }
+
+  .service-emoji {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .service-card h3 {
+    font-weight: 800;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: var(--navy);
+  }
+
+  .service-card p {
+    font-size: 0.85rem;
+    color: var(--gray);
+    line-height: 1.5;
+    font-weight: 600;
+  }
+
+  .service-tag {
+    display: inline-block;
+    margin-top: 0.8rem;
+    padding: 0.25rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 800;
+  }
+
+  /* TESTIMONIALS */
+  .testimonials {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 0;
+  }
+
+  .testi-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    position: relative;
+    border: 2px solid var(--light);
+    transition: transform 0.2s;
+  }
+
+  .testi-card:hover { transform: translateY(-4px); }
+
+  .quote-mark {
+    font-family: 'Fraunces', serif;
+    font-size: 4rem;
+    line-height: 1;
+    color: var(--yellow);
+    margin-bottom: -0.5rem;
+    display: block;
+  }
+
+  .testi-card p {
+    font-size: 0.95rem;
+    color: var(--navy);
+    line-height: 1.65;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+  }
+
+  .testi-author {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .testi-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 1rem;
+    color: white;
+  }
+
+  .testi-name { font-weight: 800; font-size: 0.9rem; color: var(--navy); }
+  .testi-role { font-size: 0.8rem; color: var(--gray); font-weight: 600; }
+
+  /* RESOURCES / PORTAL TEASER */
+  .portal-section {
+    background: var(--navy);
+    padding: 5rem 5%;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .portal-section::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(155,93,229,0.2) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .portal-section::after {
+    content: '';
+    position: absolute;
+    bottom: -100px;
+    right: -100px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(6,214,160,0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .portal-inner {
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  .portal-section .section-label { color: var(--yellow); }
+
+  .portal-section .section-title { color: white; }
+
+  .portal-section .section-sub { color: rgba(255,255,255,0.65); max-width: 100%; }
+
+  .portal-cards {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+  }
+
+  .portal-card {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 16px;
+    padding: 1.2rem 1.5rem;
+    text-align: center;
+    color: white;
+    min-width: 140px;
+    transition: background 0.2s;
+  }
+
+  .portal-card:hover { background: rgba(255,255,255,0.14); }
+  .portal-card-icon { font-size: 1.8rem; margin-bottom: 0.5rem; display: block; }
+  .portal-card p { font-size: 0.85rem; font-weight: 700; }
+
+  /* CTA STRIP */
+  .cta-strip {
+    background: linear-gradient(135deg, var(--coral), #FF8C6B);
+    padding: 4rem 5%;
+    text-align: center;
+  }
+
+  .cta-strip h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 2.2rem;
+    color: white;
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+  }
+
+  .cta-strip p {
+    color: rgba(255,255,255,0.85);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+  }
+
+  .btn-white {
+    background: white;
+    color: var(--coral);
+    padding: 0.9rem 2.2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .btn-white:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--navy);
+    padding: 3rem 5% 2rem;
+    color: rgba(255,255,255,0.6);
+  }
+
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-brand .logo-text { color: white; font-size: 1.3rem; }
+  .footer-brand p { margin-top: 0.8rem; font-size: 0.9rem; line-height: 1.6; font-weight: 600; }
+
+  .footer-col h4 { color: white; font-weight: 800; margin-bottom: 1rem; font-size: 0.9rem; }
+
+  .footer-col a {
+    display: block;
+    color: rgba(255,255,255,0.55);
+    text-decoration: none;
+    font-size: 0.88rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    transition: color 0.2s;
+  }
+
+  .footer-col a:hover { color: white; }
+
+  .footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.82rem;
+    font-weight: 600;
+  }
+
+  .nonprofit-badge {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 0.3rem 0.9rem;
+    border-radius: 50px;
+    font-size: 0.78rem;
+    font-weight: 800;
+    color: var(--yellow);
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">
+    <div class="logo-icon">S</div>
+    <span class="logo-text">Spectra <span>Education</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#">How It Works</a></li>
+    <li><a href="#">Subjects</a></li>
+    <li><a href="#">Resources</a></li>
+    <li><a href="#">About Us</a></li>
+    <li><a href="#" class="nav-cta">Book a Session</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div style="background: white;">
+  <div class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">⭐ Free nonprofit tutoring for K–12 students</div>
+      <h1>Every child deserves to <span class="highlight">shine.</span></h1>
+      <p>Spectra Education connects K–12 students with caring tutors — at no cost. Easy to book, flexible scheduling, and real results for your child.</p>
+      <div class="hero-buttons">
+        <a href="#" class="btn-primary">📅 Book a Free Session</a>
+        <a href="#" class="btn-secondary">Learn More</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="floating-badge badge-top">
+        <div class="badge-dot"></div> 3 sessions this week
+      </div>
+      <div class="hero-card-main">
+        <h3>What would you like help with?</h3>
+        <div class="subject-pills">
+          <span class="pill pill-coral">📐 Math</span>
+          <span class="pill pill-teal">📖 Reading</span>
+          <span class="pill pill-blue">🔬 Science</span>
+          <span class="pill pill-purple">✏️ Writing</span>
+          <span class="pill pill-yellow">🌍 Social Studies</span>
+        </div>
+        <div class="booking-preview">
+          <div class="booking-preview-left">
+            <p>Next available</p>
+            <p>Tomorrow, 4:00 PM</p>
+          </div>
+          <a href="#" class="book-now-mini">Book Now →</a>
+        </div>
+      </div>
+      <div class="floating-badge badge-bottom" style="color: var(--teal);">
+        <div class="badge-dot"></div> 100% free service
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item"><span class="trust-icon">🎓</span> Grades K–12</div>
+  <div class="trust-item"><span class="trust-icon">💻</span> Online & In-Person</div>
+  <div class="trust-item"><span class="trust-icon">❤️</span> Nonprofit — 100% Free</div>
+  <div class="trust-item"><span class="trust-icon">📅</span> Flexible Scheduling</div>
+  <div class="trust-item"><span class="trust-icon">✅</span> Vetted Tutors</div>
+</div>
+
+<!-- HOW IT WORKS -->
+<div class="section">
+  <p class="section-label">Simple Process</p>
+  <h2 class="section-title">Getting started is easy</h2>
+  <p class="section-sub">Three simple steps and your child is on their way to feeling more confident in school.</p>
+  <div class="steps">
+    <div class="step-card">
+      <div class="step-number">1</div>
+      <h3>Tell us what you need</h3>
+      <p>Fill out a short form with your child's grade, subject, and availability. No complicated sign-ups.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-number">2</div>
+      <h3>We match you with a tutor</h3>
+      <p>We'll pair your child with a tutor who fits their learning style and schedule — usually within 48 hours.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-number">3</div>
+      <h3>Start learning & growing</h3>
+      <p>Sessions are 1-on-1, fun, and focused. Track your child's progress through your parent portal.</p>
+    </div>
+  </div>
+</div>
+
+<!-- SUBJECTS -->
+<div class="services-section">
+  <div class="services-inner">
+    <p class="section-label">Subjects We Cover</p>
+    <h2 class="section-title">We've got every subject covered</h2>
+    <p class="section-sub">From everyday homework help to big tests — our tutors are ready to help across all core subjects.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="service-emoji">📐</span>
+        <h3>Math</h3>
+        <p>Arithmetic, algebra, geometry, and beyond</p>
+        <span class="service-tag" style="background:#FFE8E6; color:var(--coral);">All grade levels</span>
+      </div>
+      <div class="service-card">
+        <span class="service-emoji">📖</span>
+        <h3>Reading & ELA</h3>
+        <p>Reading comprehension, writing, and grammar</p>
+        <span class="service-tag" style="background:#E0FBF4; color:#059669;">All grade levels</span>
+      </div>
+      <div class="service-card">
+        <span class="service-emoji">🔬</span>
+        <h3>Science</h3>
+        <p>Biology, chemistry, earth science & physics</p>
+        <span class="service-tag" style="background:#E0F2FE; color:var(--blue);">Grades 4–12</span>
+      </div>
+      <div class="service-card">
+        <span class="service-emoji">🌍</span>
+        <h3>Social Studies</h3>
+        <p>History, geography, civics, and current events</p>
+        <span class="service-tag" style="background:#F3E8FF; color:var(--purple);">Grades 3–12</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<div class="section">
+  <p class="section-label">Parent Stories</p>
+  <h2 class="section-title">Families love Spectra</h2>
+  <p class="section-sub">Don't just take our word for it — here's what parents are saying.</p>
+  <div class="testimonials">
+    <div class="testi-card">
+      <span class="quote-mark">"</span>
+      <p>My daughter went from dreading math to actually looking forward to her sessions. The tutor was patient and made it feel easy.</p>
+      <div class="testi-author">
+        <div class="testi-avatar" style="background: var(--coral);">M</div>
+        <div>
+          <div class="testi-name">Maria T.</div>
+          <div class="testi-role">Parent of a 4th grader</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <span class="quote-mark">"</span>
+      <p>I was skeptical it was really free, but it is! The booking was so simple and the tutor showed up prepared and friendly.</p>
+      <div class="testi-author">
+        <div class="testi-avatar" style="background: var(--teal);">D</div>
+        <div>
+          <div class="testi-name">David R.</div>
+          <div class="testi-role">Parent of a 7th grader</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <span class="quote-mark">"</span>
+      <p>The parent portal is fantastic. I can see what was covered in each session and how my son is improving week by week.</p>
+      <div class="testi-author">
+        <div class="testi-avatar" style="background: var(--purple);">A</div>
+        <div>
+          <div class="testi-name">Aisha K.</div>
+          <div class="testi-role">Parent of a 9th grader</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PORTAL TEASER -->
+<div class="portal-section">
+  <div class="portal-inner">
+    <p class="section-label">For Families</p>
+    <h2 class="section-title">Your parent portal — everything in one place</h2>
+    <p class="section-sub" style="margin: 0 auto 2rem;">Track sessions, view progress, access learning materials, and stay connected with your child's tutor.</p>
+    <div class="portal-cards">
+      <div class="portal-card">
+        <span class="portal-card-icon">📊</span>
+        <p>Progress Reports</p>
+      </div>
+      <div class="portal-card">
+        <span class="portal-card-icon">📅</span>
+        <p>Session History</p>
+      </div>
+      <div class="portal-card">
+        <span class="portal-card-icon">📚</span>
+        <p>Learning Resources</p>
+      </div>
+      <div class="portal-card">
+        <span class="portal-card-icon">💬</span>
+        <p>Tutor Messaging</p>
+      </div>
+    </div>
+    <a href="#" class="btn-primary" style="background: var(--yellow); color: var(--navy);">Access Parent Portal →</a>
+  </div>
+</div>
+
+<!-- CTA STRIP -->
+<div class="cta-strip">
+  <h2>Ready to help your child thrive?</h2>
+  <p>Book your first free session today — no commitments, no cost.</p>
+  <a href="#" class="btn-white">📅 Book a Free Session →</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo">
+        <div class="logo-icon">S</div>
+        <span class="logo-text" style="color:white;">Spectra <span style="color:var(--coral);">Education</span></span>
+      </div>
+      <p>Free K–12 tutoring for every student who needs it. Because every child deserves the chance to succeed.</p>
+      <p style="margin-top:0.6rem;">📧 <a href="mailto:contact@spectraeducation.ca" style="color:rgba(255,255,255,0.6);text-decoration:none;">contact@spectraeducation.ca</a></p>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <a href="#">Math Tutoring</a>
+      <a href="#">Reading & ELA</a>
+      <a href="#">Science</a>
+      <a href="#">Social Studies</a>
+    </div>
+    <div class="footer-col">
+      <h4>Families</h4>
+      <a href="#">Book a Session</a>
+      <a href="#">Parent Portal</a>
+      <a href="#">How It Works</a>
+      <a href="#">FAQ</a>
+    </div>
+    <div class="footer-col">
+      <h4>Organization</h4>
+      <a href="#">About Us</a>
+      <a href="#">Our Tutors</a>
+      <a href="#">Contact</a>
+      <a href="#">Volunteer</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Spectra Education. All rights reserved.</span>
+    <span class="nonprofit-badge">🍁 Canadian Nonprofit · Ontario</span>
+  </div>
+</footer>
+
+</body>
+</html>
